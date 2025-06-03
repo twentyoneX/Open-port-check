@@ -1,38 +1,36 @@
-<!-- vercel-port-checker/public/index.html -->
+<!-- vercel-port-checker/public/index.html (MODIFIED) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Port Checker</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Port Scan Service</title> <!-- Title won't be very visible in iframe -->
+    <link rel="stylesheet" href="style.css"> <!-- Keep for button/table styling -->
+    <style>
+        /* Additional styles for centering if needed within iframe */
+        body {
+            text-align: center; /* Center inline-block elements like the button */
+            margin: 20px 0; /* Add some top/bottom margin */
+            padding: 0;
+        }
+        .container-iframe {
+            display: inline-block; /* Allows text-align:center on body to work */
+            text-align: left; /* Reset text-align for content within container */
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Open Port Checker</h1>
-        <p>This tool attempts to connect to common ports on your public IP address to see if they are open.</p>
-        <p><strong>Why check for open ports?</strong></p>
-        <ul>
-            <li>Open ports can be a security risk if not managed properly.</li>
-            <li>Some VPNs or proxies might leave certain ports open, which can be a characteristic that distinguishes them from typical user connections.</li>
-            <li>This test helps you understand what services might be externally accessible on your IP.</li>
-        </ul>
-
+    <div class="container-iframe">
         <button id="scanButton">Start Port Scan</button>
         
-        <div id="yourIpInfo"></div>
-        <div id="resultsArea">
+        <div id="yourIpInfo" style="margin-top: 15px; text-align: center;"></div>
+        <div id="resultsArea" style="margin-top: 15px;">
             <!-- Results will be populated here -->
         </div>
-        <div id="loadingIndicator" style="display: none;">
+        <div id="loadingIndicator" style="display: none; margin-top: 15px;">
             <p>Scanning... this may take up to a minute. Please wait.</p>
             <div class="spinner"></div>
         </div>
-
-        <h2>What ports are tested?</h2>
-        <ul id="testedPortsList">
-            <!-- Populated by script.js -->
-        </ul>
     </div>
 
     <script src="script.js"></script>
