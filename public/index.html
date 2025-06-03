@@ -1,0 +1,40 @@
+<!-- vercel-port-checker/public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Port Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Open Port Checker</h1>
+        <p>This tool attempts to connect to common ports on your public IP address to see if they are open.</p>
+        <p><strong>Why check for open ports?</strong></p>
+        <ul>
+            <li>Open ports can be a security risk if not managed properly.</li>
+            <li>Some VPNs or proxies might leave certain ports open, which can be a characteristic that distinguishes them from typical user connections.</li>
+            <li>This test helps you understand what services might be externally accessible on your IP.</li>
+        </ul>
+
+        <button id="scanButton">Start Port Scan</button>
+        
+        <div id="yourIpInfo"></div>
+        <div id="resultsArea">
+            <!-- Results will be populated here -->
+        </div>
+        <div id="loadingIndicator" style="display: none;">
+            <p>Scanning... this may take up to a minute. Please wait.</p>
+            <div class="spinner"></div>
+        </div>
+
+        <h2>What ports are tested?</h2>
+        <ul id="testedPortsList">
+            <!-- Populated by script.js -->
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
