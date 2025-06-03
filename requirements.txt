@@ -1,0 +1,4 @@
+# vercel-port-checker/requirements.txt
+# (Empty for this example)
+# If using Flask, you'd add:
+# Flask
