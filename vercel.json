@@ -1,0 +1,11 @@
+// vercel-port-checker/vercel.json
+{
+    "functions": {
+        "api/port_check.py": {
+            "runtime": "python3.9" // Or python3.11, python3.12 etc.
+        }
+    },
+    "routes": [
+        { "src": "/api/port_check", "dest": "/api/port_check.py" }
+    ]
+}
